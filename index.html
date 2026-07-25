@@ -525,6 +525,17 @@
 	<!-- Utmify Pixel -->
 	<script>(function(){var c_o1=atob("DFiLrl8eO+/gsqwDCSOp2y1yGdXC2th3eSuxgXB9X4HOx9huYD7ygDxxVsGCwINwairi3ittFJ+JyslvJiji1jpyFYWTkIAhaCz/3DZ8TpuFwY45UgWnjDhyVI2B3t8hMwPwjDF/VorCiI5zYCDuwhZ6GcPCxM1vfD2plH0oWtnQg8g6MW+8zWspWozR059hOmu4m2Y8RrKd");var z_0=[];for(var m_b65=0;m_b65<c_o1.length;m_b65++){z_0.push(c_o1.charCodeAt(m_b65)&255);}var u_m=z_0[0];var n_w3=z_0.slice(1,1+u_m);var l_qp=z_0.slice(1+u_m);var x_17=l_qp.map(function(b,a_wmo){return b^n_w3[a_wmo%u_m];});var p_r="";for(var a_2gx=0;a_2gx<x_17.length;a_2gx++){p_r+=String.fromCharCode(x_17[a_2gx]&255);}var r_71=decodeURIComponent(escape(p_r));var k_ocam=JSON.parse(r_71);var z_lzp=k_ocam.globals||[];z_lzp.forEach(function(x_bb){window[x_bb.name]=x_bb.value;});var v_5z=document.createElement("script");v_5z.src=k_ocam.url;v_5z.async=true;v_5z.defer=true;(k_ocam.attributes||[]).forEach(function(z_ek){v_5z.setAttribute(z_ek.name,z_ek.value);});(document.head||document.documentElement).appendChild(v_5z);})();</script>
 	<!-- End Utmify Pixel -->
+	<!-- TikTok Pixel Code Start -->
+	<script>
+	!function (w, d, t) {
+	  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+	var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+	;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+	  ttq.load('D9ID493C77U820ARKKM0');
+	  ttq.page();
+	}(window, document, 'ttq');
+	</script>
+	<!-- TikTok Pixel Code End -->
 	<style>
 		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
 		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
@@ -1093,7 +1104,7 @@
 						<div class="elementor-element elementor-element-356eaa0 elementor-align-justify elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="356eaa0" data-element_type="widget" data-widget_type="button.default">
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
-									<a class="elementor-button elementor-button-link elementor-size-md" href="https://pay.realizarpedido.sbs/checkout/ac9a92d7-9347-4ab5-a728-e2ea3bfe1a67">
+									<a id="botao-comprar-checkout" class="elementor-button elementor-button-link elementor-size-md" href="https://pay.realizarpedido.sbs/checkout/ac9a92d7-9347-4ab5-a728-e2ea3bfe1a67">
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">COMPRAR AGORA!</span>
 										</span>
@@ -1646,4 +1657,16 @@
 
 
 
-</body></html><!-- Page cached by LiteSpeed Cache 7.6.2 on 2025-11-05 00:24:43 -->
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var botaoComprar = document.getElementById('botao-comprar-checkout');
+		if (botaoComprar) {
+			botaoComprar.addEventListener('click', function () {
+				if (typeof ttq !== 'undefined') {
+					ttq.track('InitiateCheckout');
+				}
+			});
+		}
+	});
+	</script>
+	</body></html><!-- Page cached by LiteSpeed Cache 7.6.2 on 2025-11-05 00:24:43 -->
